@@ -1,0 +1,177 @@
+<?xml version="1.0" ?>
+<Library name="Nangate45" condition="ff_1p25V_0C">
+   <Legal>
+Copyright (C) 2018-2020, Thrace Systems LLC
+  
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); 
+you may not use this file except in compliance with the License. 
+You may obtain a copy of the License at
+
+http://opensource.org/licenses/Apache-2.0
+
+Unless required by applicable law or agreed to in writing, 
+software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, 
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+See the License for the specific language governing permissions and limitations under the License.
+
+</Legal>
+   <Units>
+      <Unit name="capacitanceUnit" value="pF"/>
+      <Unit name="resistanceUnit" value="ohm"/>
+      <Unit name="dimensionUnit" value="um"/>
+      <Unit name="frequencyUnit" value="Hz"/>
+      <Unit name="powerUnit" value="mW"/>
+      <Unit name="energyUnit" value="pJ"/>
+      <Unit name="voltageUnit" value="V"/>
+      <Unit name="temperatureKelvinUnit" value="K"/>
+      <Unit name="temperatureCelsiusUnit" value="C"/>
+      <Unit name="timeUnit" value="ns"/>
+   </Units>
+   <ModelParameters>
+      <Parameter name="V" units="voltageUnit"/>
+      <Parameter name="T" units="temperatureCelsiusUnit"/>
+      <Parameter name="input_transition_time" units="timeUnit"/>
+      <Parameter name="total_output_net_capacitance" units="capacitanceUnit"/>
+   </ModelParameters>
+   <ModelConditions name="ff_1p25V_0C">
+      <Condition name="P" value="ff"/>
+      <Condition name="V" value="1.25"/>
+      <Condition name="T" value="0"/>
+   </ModelConditions>
+   <ModelContributors>
+      <PowerContributor name="CONTRIB_198461" type="subthreshold_leakage">
+         <Device type="nmos_vtl">
+            <Values>
+               <Temperature name="temp">
+                  <Expression>T</Expression>
+               </Temperature>
+               <Voltage name="Vds">
+                  <Expression>2.1504e-10*pow(V, 2)*pow(T, 3) + -3.3502e-10*pow(V, 1)*pow(T, 3) + 1.7920e-10*pow(V, 0)*pow(T, 3) + 7.1526e-08*pow(V, 2)*pow(T, 2) + -1.2094e-07*pow(V, 1)*pow(T, 2) + 5.9421e-08*pow(V, 0)*pow(T, 2) + 9.7142e-06*pow(V, 2)*pow(T, 1) + -1.6677e-05*pow(V, 1)*pow(T, 1) + 8.0107e-06*pow(V, 0)*pow(T, 1) + 6.4645e-04*pow(V, 2)*pow(T, 0) + -1.1480e-03*pow(V, 1)*pow(T, 0) + 5.4989e-04*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+               <Voltage name="Vgs">
+                  <Expression>-7.1254e-14*pow(V, 2)*pow(T, 3) + 1.1054e-13*pow(V, 1)*pow(T, 3) + -3.0063e-14*pow(V, 0)*pow(T, 3) + 6.6076e-12*pow(V, 2)*pow(T, 2) + -7.0121e-12*pow(V, 1)*pow(T, 2) + -9.1578e-13*pow(V, 0)*pow(T, 2) + 3.6691e-10*pow(V, 2)*pow(T, 1) + -8.6574e-10*pow(V, 1)*pow(T, 1) + 4.9484e-10*pow(V, 0)*pow(T, 1) + -1.5415e-08*pow(V, 2)*pow(T, 0) + 1.0000e+00*pow(V, 1)*pow(T, 0) + -3.1381e-09*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+               <Voltage name="Vbs">
+                  <Expression>-1.0425e-321*pow(V, 2)*pow(T, 3) + 2.3419e-321*pow(V, 1)*pow(T, 3) + -1.2846e-321*pow(V, 0)*pow(T, 3) + 1.7939e-319*pow(V, 2)*pow(T, 2) + -4.0333e-319*pow(V, 1)*pow(T, 2) + 2.2148e-319*pow(V, 0)*pow(T, 2) + 4.1654e-319*pow(V, 2)*pow(T, 1) + -9.5045e-319*pow(V, 1)*pow(T, 1) + 5.2921e-319*pow(V, 0)*pow(T, 1) + -7.5854e-316*pow(V, 2)*pow(T, 0) + 1.7132e-315*pow(V, 1)*pow(T, 0) + -9.4572e-316*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+            </Values>
+         </Device>
+      </PowerContributor>
+      <PowerContributor name="CONTRIB_198462" type="gate_leakage">
+         <Device type="pmos_vtl">
+            <Values>
+               <Temperature name="temp">
+                  <Expression>T</Expression>
+               </Temperature>
+               <Voltage name="Vds">
+                  <Expression>2.1163e-10*pow(V, 2)*pow(T, 3) + -3.2827e-10*pow(V, 1)*pow(T, 3) + 1.7591e-10*pow(V, 0)*pow(T, 3) + 7.2080e-08*pow(V, 2)*pow(T, 2) + -1.2203e-07*pow(V, 1)*pow(T, 2) + 5.9945e-08*pow(V, 0)*pow(T, 2) + 9.6796e-06*pow(V, 2)*pow(T, 1) + -1.6602e-05*pow(V, 1)*pow(T, 1) + 7.9709e-06*pow(V, 0)*pow(T, 1) + 6.5267e-04*pow(V, 2)*pow(T, 0) + -1.0012e+00*pow(V, 1)*pow(T, 0) + 5.5773e-04*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+               <Voltage name="Vgs">
+                  <Expression>-1.0425e-321*pow(V, 2)*pow(T, 3) + 2.3419e-321*pow(V, 1)*pow(T, 3) + -1.2846e-321*pow(V, 0)*pow(T, 3) + 1.7939e-319*pow(V, 2)*pow(T, 2) + -4.0333e-319*pow(V, 1)*pow(T, 2) + 2.2148e-319*pow(V, 0)*pow(T, 2) + 4.1654e-319*pow(V, 2)*pow(T, 1) + -9.5045e-319*pow(V, 1)*pow(T, 1) + 5.2921e-319*pow(V, 0)*pow(T, 1) + -7.5854e-316*pow(V, 2)*pow(T, 0) + 1.7132e-315*pow(V, 1)*pow(T, 0) + -9.4572e-316*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+               <Voltage name="Vbs">
+                  <Expression>-1.0425e-321*pow(V, 2)*pow(T, 3) + 2.3419e-321*pow(V, 1)*pow(T, 3) + -1.2846e-321*pow(V, 0)*pow(T, 3) + 1.7939e-319*pow(V, 2)*pow(T, 2) + -4.0333e-319*pow(V, 1)*pow(T, 2) + 2.2148e-319*pow(V, 0)*pow(T, 2) + 4.1654e-319*pow(V, 2)*pow(T, 1) + -9.5045e-319*pow(V, 1)*pow(T, 1) + 5.2921e-319*pow(V, 0)*pow(T, 1) + -7.5854e-316*pow(V, 2)*pow(T, 0) + 1.7132e-315*pow(V, 1)*pow(T, 0) + -9.4572e-316*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+            </Values>
+         </Device>
+      </PowerContributor>
+      <PowerContributor name="CONTRIB_198459" type="gate_leakage">
+         <Device type="nmos_vtl">
+            <Values>
+               <Temperature name="temp">
+                  <Expression>T</Expression>
+               </Temperature>
+               <Voltage name="Vds">
+                  <Expression>-8.0663e-11*pow(V, 2)*pow(T, 3) + 7.3740e-11*pow(V, 1)*pow(T, 3) + -5.7133e-11*pow(V, 0)*pow(T, 3) + -3.4474e-08*pow(V, 2)*pow(T, 2) + 5.7660e-08*pow(V, 1)*pow(T, 2) + -3.0607e-08*pow(V, 0)*pow(T, 2) + -4.1153e-06*pow(V, 2)*pow(T, 1) + 7.0717e-06*pow(V, 1)*pow(T, 1) + -3.6151e-06*pow(V, 0)*pow(T, 1) + -3.1548e-04*pow(V, 2)*pow(T, 0) + 1.0006e+00*pow(V, 1)*pow(T, 0) + -2.9359e-04*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+               <Voltage name="Vgs">
+                  <Expression>-1.0425e-321*pow(V, 2)*pow(T, 3) + 2.3419e-321*pow(V, 1)*pow(T, 3) + -1.2846e-321*pow(V, 0)*pow(T, 3) + 1.7939e-319*pow(V, 2)*pow(T, 2) + -4.0333e-319*pow(V, 1)*pow(T, 2) + 2.2148e-319*pow(V, 0)*pow(T, 2) + 4.1654e-319*pow(V, 2)*pow(T, 1) + -9.5045e-319*pow(V, 1)*pow(T, 1) + 5.2921e-319*pow(V, 0)*pow(T, 1) + -7.5854e-316*pow(V, 2)*pow(T, 0) + 1.7132e-315*pow(V, 1)*pow(T, 0) + -9.4572e-316*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+               <Voltage name="Vbs">
+                  <Expression>-1.0425e-321*pow(V, 2)*pow(T, 3) + 2.3419e-321*pow(V, 1)*pow(T, 3) + -1.2846e-321*pow(V, 0)*pow(T, 3) + 1.7939e-319*pow(V, 2)*pow(T, 2) + -4.0333e-319*pow(V, 1)*pow(T, 2) + 2.2148e-319*pow(V, 0)*pow(T, 2) + 4.1654e-319*pow(V, 2)*pow(T, 1) + -9.5045e-319*pow(V, 1)*pow(T, 1) + 5.2921e-319*pow(V, 0)*pow(T, 1) + -7.5854e-316*pow(V, 2)*pow(T, 0) + 1.7132e-315*pow(V, 1)*pow(T, 0) + -9.4572e-316*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+            </Values>
+         </Device>
+      </PowerContributor>
+      <PowerContributor name="CONTRIB_198460" type="subthreshold_leakage">
+         <Device type="pmos_vtl">
+            <Values>
+               <Temperature name="temp">
+                  <Expression>T</Expression>
+               </Temperature>
+               <Voltage name="Vds">
+                  <Expression>-9.2849e-11*pow(V, 2)*pow(T, 3) + 1.0165e-10*pow(V, 1)*pow(T, 3) + -7.2371e-11*pow(V, 0)*pow(T, 3) + -3.2246e-08*pow(V, 2)*pow(T, 2) + 5.2629e-08*pow(V, 1)*pow(T, 2) + -2.7890e-08*pow(V, 0)*pow(T, 2) + -4.1157e-06*pow(V, 2)*pow(T, 1) + 7.0655e-06*pow(V, 1)*pow(T, 1) + -3.6084e-06*pow(V, 0)*pow(T, 1) + -3.1860e-04*pow(V, 2)*pow(T, 0) + 5.8887e-04*pow(V, 1)*pow(T, 0) + -2.9775e-04*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+               <Voltage name="Vgs">
+                  <Expression>-1.1050e-13*pow(V, 2)*pow(T, 3) + 2.7062e-13*pow(V, 1)*pow(T, 3) + -1.6233e-13*pow(V, 0)*pow(T, 3) + -4.8470e-12*pow(V, 2)*pow(T, 2) + 6.8697e-12*pow(V, 1)*pow(T, 2) + -1.2379e-12*pow(V, 0)*pow(T, 2) + 2.2402e-09*pow(V, 2)*pow(T, 1) + -4.9859e-09*pow(V, 1)*pow(T, 1) + 2.6992e-09*pow(V, 0)*pow(T, 1) + 4.3883e-08*pow(V, 2)*pow(T, 0) + -1.0000e+00*pow(V, 1)*pow(T, 0) + 4.4280e-08*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+               <Voltage name="Vbs">
+                  <Expression>-1.0425e-321*pow(V, 2)*pow(T, 3) + 2.3419e-321*pow(V, 1)*pow(T, 3) + -1.2846e-321*pow(V, 0)*pow(T, 3) + 1.7939e-319*pow(V, 2)*pow(T, 2) + -4.0333e-319*pow(V, 1)*pow(T, 2) + 2.2148e-319*pow(V, 0)*pow(T, 2) + 4.1654e-319*pow(V, 2)*pow(T, 1) + -9.5045e-319*pow(V, 1)*pow(T, 1) + 5.2921e-319*pow(V, 0)*pow(T, 1) + -7.5854e-316*pow(V, 2)*pow(T, 0) + 1.7132e-315*pow(V, 1)*pow(T, 0) + -9.4572e-316*pow(V, 0)*pow(T, 0)</Expression>
+               </Voltage>
+            </Values>
+         </Device>
+      </PowerContributor>
+   </ModelContributors>
+   <Cell name="INV_X1">
+      <Pins>
+         <Pin name="VDD" direction="input" type="primary_power"/>
+         <Pin name="VSS" direction="input" type="primary_ground"/>
+         <Pin name="A" direction="input" type="signal" capacitance="1.65869e-03"/>
+         <Pin name="ZN" direction="output" type="signal"/>
+      </Pins>
+      <Modes mutuallyExclusive="true">
+         <Mode value="6.7867625e-05" when="A">
+            <PowerContributor name="CONTRIB_198461" quantity="1" width="0.415" length="0.05"/>
+            <PowerContributor name="CONTRIB_198462" quantity="1" width="0.63" length="0.05"/>
+         </Mode>
+         <Mode value="3.8145875e-05" when="(Not A)">
+            <PowerContributor name="CONTRIB_198459" quantity="1" width="0.415" length="0.05"/>
+            <PowerContributor name="CONTRIB_198460" quantity="1" width="0.63" length="0.05"/>
+         </Mode>
+         <Mode value="6.7867625e-05" when="A">
+            <PowerContributor name="CONTRIB_198461" quantity="1" width="0.415" length="0.05"/>
+            <PowerContributor name="CONTRIB_198462" quantity="1" width="0.63" length="0.05"/>
+         </Mode>
+         <Mode value="3.8145875e-05" when="(Not A)">
+            <PowerContributor name="CONTRIB_198459" quantity="1" width="0.415" length="0.05"/>
+            <PowerContributor name="CONTRIB_198460" quantity="1" width="0.63" length="0.05"/>
+         </Mode>
+      </Modes>
+      <Events>
+         <Event style="pinTransition" outputPin="ZN" outputTransition="rising" inputPin="A">
+            <Table name="energy" units="energyUnit">
+               <Indices numDimensions="2">
+                  <Index name="input_transition_time">0.000932129, 0.00354597, 0.0127211, 0.0302424, 0.0575396, 0.0958408, 0.14624</Index>
+                  <Index name="total_output_net_capacitance">0.000365616, 0.00189781, 0.00379562, 0.00759125, 0.0151825, 0.030365, 0.06073</Index>
+               </Indices>
+               <RowArray rowIndex="input_transition_time" columnIndex="total_output_net_capacitance">
+2.36724e-03, 2.44641e-03, 2.47796e-03, 2.48810e-03, 2.43916e-03, 2.45575e-03, 2.32738e-03
+2.41882e-03, 2.43879e-03, 2.46653e-03, 2.45411e-03, 2.47440e-03, 2.43631e-03, 2.44364e-03
+2.97202e-03, 3.06591e-03, 2.94737e-03, 2.83982e-03, 2.67972e-03, 2.54203e-03, 2.51642e-03
+4.61360e-03, 4.42708e-03, 4.30812e-03, 4.04403e-03, 3.68137e-03, 3.19515e-03, 2.70075e-03
+7.39346e-03, 7.12025e-03, 6.78398e-03, 6.29357e-03, 5.76854e-03, 4.96850e-03, 4.05313e-03
+1.14051e-02, 1.10441e-02, 1.06608e-02, 9.88842e-03, 8.82981e-03, 7.78861e-03, 6.33557e-03
+1.67642e-02, 1.63197e-02, 1.58770e-02, 1.51110e-02, 1.37539e-02, 1.18717e-02, 9.84346e-03
+</RowArray>
+            </Table>
+         </Event>
+         <Event style="pinTransition" outputPin="ZN" outputTransition="falling" inputPin="A">
+            <Table name="energy" units="energyUnit">
+               <Indices numDimensions="2">
+                  <Index name="input_transition_time">0.000932129, 0.00354597, 0.0127211, 0.0302424, 0.0575396, 0.0958408, 0.14624</Index>
+                  <Index name="total_output_net_capacitance">0.000365616, 0.00189781, 0.00379562, 0.00759125, 0.0151825, 0.030365, 0.06073</Index>
+               </Indices>
+               <RowArray rowIndex="input_transition_time" columnIndex="total_output_net_capacitance">
+-1.57000e-07, -2.48000e-07, -3.58000e-07, -5.77000e-07, -1.01500e-06, -1.88800e-06, -3.63600e-06
+-3.07000e-07, -3.94000e-07, -5.04000e-07, -7.23000e-07, -1.16000e-06, -2.03400e-06, -3.78200e-06
+3.79083e-04, 1.17465e-04, -1.03200e-06, -1.24800e-06, -1.68000e-06, -2.55100e-06, -4.29700e-06
+1.84593e-03, 1.61688e-03, 1.30187e-03, 8.22504e-04, 4.00668e-04, 1.39974e-04, -5.28900e-06
+3.95335e-03, 3.83295e-03, 3.58170e-03, 3.00164e-03, 2.05472e-03, 1.21132e-03, 6.48320e-04
+6.82020e-03, 6.80486e-03, 6.65992e-03, 6.20494e-03, 5.04615e-03, 3.40269e-03, 2.08566e-03
+1.06066e-02, 1.06208e-02, 1.05268e-02, 1.02448e-02, 9.25415e-03, 7.06665e-03, 4.60671e-03
+</RowArray>
+            </Table>
+         </Event>
+      </Events>
+   </Cell>
+</Library>
